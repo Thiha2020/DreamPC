@@ -1,0 +1,147 @@
+    <html>
+        <head>
+            <link rel="stylesheet" href="style.css">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <script>
+                /*Overlay section*/
+                /* Open when someone clicks on the img icon element */
+                function openNav() {
+                    document.getElementById("myNav").style.width = "100%";
+                }
+                /* Close when someone clicks on the "x" symbol inside the overlay */
+                function closeNav() {
+                    document.getElementById("myNav").style.width = "0%";
+                }
+
+            </script>
+            <title>System Builder</title>
+
+        </head>
+        <body>
+            <div class="header">
+                <div class="logo-container">
+                  <img src="https://img.icons8.com/color/48/000000/workstation.png" class="logo"/>
+                </div>
+                <div class="menu-container">
+                    <a href="#" class="menuItem">Main Page</a>
+                    <a href="#" class="menuItem">Profitilo</a>
+                    <a href="#" class="menuItem">Login</a>
+                    <a href="#" class="menuItem">Create account</a>
+                    <a href="#" class="menuItem">Setting</a>
+              </div>
+              <!-- The overlay -->
+            <div id="myNav" class="overlay">
+
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <a href="#" class="menuItem">Main Page</a>
+                <a href="#" class="menuItem">Protfolio</a>
+                <a href="#" class="menuItem">Login</a>
+                <a href="#" class="menuItem">Create account</a>
+                <a href="#" class="menuItem">Setting</a>
+              </div>
+  
+            </div>
+            <div class="overlayIcon">
+  <!-- Use any element to open/show the overlay navigation menu -->
+            <img src="https://img.icons8.com/ios-glyphs/30/000000/menu.png"  onclick="openNav()"/>
+             </div>
+            </div>
+            <div class="form-container">
+            <div class="title">
+                <h1 id="title">Dream PC</h1>
+                <p id="description">Build your pc with our website</p>
+            </div>
+            
+            <!--Form for personal information -->
+            <form id="survey-form" class="surveyForm">
+            <div class="name">
+                <label id="name-label" for="name">Name</label>
+                <input type="text"  id="name" name="name" placeholder="Enter your name" required/>
+            </div>
+            <div class="email">
+                <label id="email-label" for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required/>
+            </div>
+            <div class="age">
+                <label id="number-label" for="age">Age</label>
+                <input type="number" id="number" name="age" min="10" max="100" placeholder="Age" required/>
+                </div>
+            <!--Form for drop drown and select item(PC type)-->
+            <div class="dropDown">
+                <label id="dropdown-label" for="dropdown">Select the PC type you want to build</label>
+                <select id="dropdown">
+                    <option>Office PC</option>
+                    <option>Budget Gaming PC</option>
+                    <option>Budget Video Editing PC</option>
+                    <option>High-end Gaming PC</option>
+                    <option>High-end Video Editing PC</option>
+                </select>
+            </div>
+            <!--PC part qualtiy-->
+            <div class="radioButton">
+                <p>Select PC part quality</p>
+                <label><input type="radio" name="quality" value="new" checked/>New</label>
+                <label><input type="radio" name="quality" value="old"/>Used</label>
+                <label><input type="radio" name="quality" value="new+old"/>New + Used</label> 
+            </div>
+            <!--CPU-->
+            <div class="dropdown">
+                <p>Select your CPU</p>
+                <select id="dropdown">
+                    <option name="cpu" value="none" disabled selected value>Please Select A Processor</option>
+                    <option>Intel Pentium G4600</option>
+                    <option>AMD Ryzen 5 2600 Processor with Wraith Stealth Cooler</option>
+                    <option>AMD RYZEN 5 3600 6-Core</option>
+                    <option>Intel Core i3-9100F Coffee Lake 4-Core</option>
+                    <option>AMD Ryzen 9 3950X 16 Core</option>
+                    <option>AMD Ryzen Threadripper 3990X 64 Core / 128 Thread</option>
+                    <option>Intel Core i5-10400 10th Gen</option>
+                    <option>Intel Core i7-10700K Unlocked 10th Gen</option>
+                    <option>Intel Core i5-8600K Coffee Lake 3.6GHz</option>
+                    <option>Intel Core i7-10700 2.9GHz</option>
+                    <option>Intel Core i9-10900 10 Core / 20 Thread</option>
+                    <option>AMD Ryzen 7 Pro 4750G 8 Core / 16 Thread</option>
+                </select>
+            </div>
+
+            <!--GPU-->
+            <div class="dropdown">
+                <p>Select your GPU</p>
+                <select id="dropdown">
+                    <option disabled selected value>Please select a GPU</option>
+                    <option>Zotac GTX 1650 OC 4GB GDDR5</option>
+                    <option>Palit RTX 2060 Super Dual 8GB GDDR6</option>
+                    <option>AFOX GTX 1650 4GB DDR5</option>
+                    <option>Gigabyte RTX 2060 Super Windforce OC 8GB DDR6</option>
+                    <option>AFOX GTX 1650 4GB DDR5</option>
+                </select>
+            </div>
+            
+            <!--Other essential pc parts-->
+            <div class="checkBox">
+                <p>Select the other essential PC parts you want</p>
+                <p>(If you already own those part you can skip now)</p>
+                <label><input type="checkbox" name="mainboard" value="check" checked/>Mainboard</label><br>
+                <label><input type="checkbox" name="monitor" value="check"/>Monitor</label><br>
+                <label><input type="checkbox" name="ups" value="check"/>UPS</label><br>
+                <label><input type="checkbox" name="cooler"value="check"/>RGB fan </label><br>
+                <label><input type="checkbox" name="chair" value="check"/>Gaming chair</label><br>             
+            </div>
+            <!---->
+            <!--Comment section-->
+            <div class="comment-group">
+                <label class="comment-label">Any comment or suggestion?</label>
+                <textarea class="comment" name="comment" placeholder="Enter your comment"></textarea>
+            </div>
+            <!--Sumbit section-->
+            <div class="submit-group">
+                <button type="submit" id="submit">Built now</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
