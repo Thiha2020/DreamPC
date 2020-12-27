@@ -3,7 +3,7 @@
 const name=document.getElementById("name");
 const nameHint=document.getElementById("name-hint");
 const example=document.getElementById("name-eg");
-name.addEventListener('keydown',()=>{
+name.addEventListener('keydown',function(){
  
   if(name.value.length < 5){
     nameHint.textContent="User name must be at least 5 character or more";
@@ -14,7 +14,7 @@ name.addEventListener('keydown',()=>{
   }
 });
 
-name.addEventListener('blur',()=>{
+name.addEventListener('blur',function(){
   if(name.value.length < 5){
     name.value="";
  
