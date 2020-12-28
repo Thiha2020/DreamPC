@@ -1,9 +1,23 @@
+// coded by @lasjorg
+// eslint-disable-next-line no-unused-vars
+const projectName = 'survey-form';
+/*Overlay section*/
+                /* Open when someone clicks on the img icon element */
+                function openNav() {
+                    document.getElementById("myNav").style.width = "100%";
+                }
+                /* Close when someone clicks on the "x" symbol inside the overlay */
+                function closeNav() {
+                    document.getElementById("myNav").style.width = "0%";
+                }
+
+
 
 //Name  validation
 const name=document.getElementById("name");
 const nameHint=document.getElementById("name-hint");
 const example=document.getElementById("name-eg");
-name.addEventListener('keydown',function(){
+name.addEventListener('keydown',()=>{
  
   if(name.value.length < 5){
     nameHint.textContent="User name must be at least 5 character or more";
@@ -14,7 +28,7 @@ name.addEventListener('keydown',function(){
   }
 });
 
-name.addEventListener('blur',function(){
+name.addEventListener('blur',()=>{
   if(name.value.length < 5){
     name.value="";
  
