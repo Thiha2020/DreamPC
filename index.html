@@ -1,7 +1,6 @@
-<html>
+    <html>
         <head>
-            <link rel="stylesheet" href="css/style.css">
-            <script src="js/main.js"></script>
+            <link rel="stylesheet" href="style.css">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>System Builder</title>
 
@@ -9,7 +8,7 @@
         <body>
             <div class="header">
                 <div class="logo-container">
-                  <img src="https://img.icons8.com/color/48/000000/workstation.png" class="logo"/>
+                  <img src="https://img.icons8.com/color/48/000000/workstation.png" class="logo" alt="logo"/>
                 </div>
                 <div class="menu-container">
                     <a href="#" class="menuItem">Main Page</a>
@@ -49,21 +48,21 @@
             <form id="survey-form" class="surveyForm">
             <div class="name">
                 <label id="name-label" for="name">Name</label>
-                <input type="text"  id="name" name="name" placeholder="Enter your name" required/>
+                <input type="text"  id="name" placeholder="Enter your name" required>
+                <div id="name-eg"></div></br>
+                <div id="name-hint"></div>
             </div>
-              <div id="name-eg"></div>
-              <div id="name-hint"></div>
             <div class="email">
                 <label id="email-label" for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required/>
-              <div id="email-eg"></div></br>
-              <div id="email-hint"></div>
+                <div id="email-eg"></div></br>
+                <div id="email-hint"></div>
+                
             </div>
             <div class="age">
                 <label id="number-label" for="age">Age</label>
                 <input type="number" id="number" name="age" min="10" max="100" placeholder="Age" required/>
-              <div id="age-hint"></div>
-          
+                <div id="age-hint"></div>
                 </div>
             <!--Form for drop drown and select item(PC type)-->
             <div class="dropDown">
@@ -139,5 +138,103 @@
         </form>
     </div>
 </body>
-</html>
+<script type="text/javascript">
+/*Overlay section*/
+                /* Open when someone clicks on the img icon element */
+                function openNav() {
+                    document.getElementById("myNav").style.width = "100%";
+                }
+                /* Close when someone clicks on the "x" symbol inside the overlay */
+                function closeNav() {
+                    document.getElementById("myNav").style.width = "0%";
+                }
 
+
+
+//Name  validation
+const nameHint=document.getElementById("name-hint");
+const example=document.getElementById("name-eg");
+const name = document.getElementById("name");
+
+name.addEventListener('keydown', ()=>{
+
+if(name.value.length < 5 || name.value.length > 20){
+	nameHint.textContent = "Name must be at least 5 characters or not longer than 20 characters";
+	example.textContent = "e.g (Steven)";
+	nameHint.style.color ="#ff0000";
+    nameHint.style.fontStyle ="italic";
+    example.style.color ="#ff0000";
+    example.style.fontStyle ="italic";
+
+}else{
+	nameHint.textContent = "";
+	example.textContent = "";
+}	
+});
+
+name.addEventListener('blur', ()=>{
+	if(name.value.length < 5 || name.value.length > 20){
+		nameHint.textContent = "Name must be at least 5 characters or not longer than 20 characters";
+	    example.textContent = "e.g (Steven)";
+	    name.value="";
+	}else{
+		name.value;
+	}
+});
+
+//Email validation
+
+
+email.addEventListener('keyup', ()=>{
+var email = document.getElementById('email').value;
+var form = document.getElementById('survey-form');
+var emailHint = document.getElementById('email-hint');
+var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+	if (email.match(pattern)){
+		emailHint.textContent ="Your email address is valid";
+		emailHint.style.color ="#00ff00";
+		emailHint.style.fontStyle ="italic";
+	}else{
+		emailHint.textContent ="Please enter valid email address";
+		emailHint.style.color ="#ff0000";
+		emailHint.style.fontStyle ="italic";
+	}
+	});
+
+
+email.addEventListener('blur', ()=>{
+var emailInput = document.getElementById('email');
+var email = document.getElementById('email').value;
+var form = document.getElementById('survey-form');
+var emailHint = document.getElementById('email-hint');
+var emailEG = document.getElementById('email-eg');
+var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+	if(!email.match(pattern)){
+		emailHint.textContent ="Please enter valid email address";
+		emailEG.textContent="e.g(steven@email.com)";
+
+		;
+	}else{
+		emailHint.textContent ="Your email address is valid";
+
+	}
+});
+
+
+//Age Validation
+const age = document.getElementById("number");
+const ageHint = document.getElementById("age-hint");
+age.addEventListener('blur',function(){
+  if(this.value < 14){
+    ageHint.textContent="You are under age";
+    ageHint.style.color ="#ff0000";
+    ageHint.style.fontStyle ="italic";
+   
+  }else{
+    ageHint.textContent="";
+  };
+});
+
+</script>
+</html>
